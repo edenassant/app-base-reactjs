@@ -19,7 +19,7 @@ jobs:
         run: npm run build
 
       - name: lancer l'app
-        run: npm run start
+        run: npm run start & sleep 20
 
       - name: ajouter le curl
         run: curl http://localhost:3000
