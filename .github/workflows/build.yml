@@ -1,0 +1,25 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name : Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+
+      - name: installer l'app
+        run: npm install
+
+      - name: build l'app
+        run: npm run build
+
+      - name: lancer l'app
+        run: npm run start
+
+      - name: ajouter le curl
+        run: curl http://localhost:3000
